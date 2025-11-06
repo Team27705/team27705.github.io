@@ -119,7 +119,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Set h1 font to Rubik Mono One by default */
+h1 {
+  font-family: var(--font-rubik-mono-one), sans-serif;
+}
+
+h2, h3, h4, h5, h6, p, span, div, a, li, button, input, textarea {
+  font-family: var(--font-rubik), sans-serif;
 }

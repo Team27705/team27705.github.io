@@ -31,6 +31,12 @@ export default function HomePage() {
             </div>
           </Link>
         </div>
+        {/* Add a bunch more junk to get it to scroll */}
+        <div className="mt-20 text-center text-white">
+          {Array.from({ length: 50 }).map((_, i) => (
+            <p key={i}>This is some extra content to make the page scrollable.</p>
+          ))}
+        </div>
       </div>
     </main>
   );
