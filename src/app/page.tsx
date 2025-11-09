@@ -1,41 +1,31 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
-        {/* Add a bunch more junk to get it to scroll */}
-        <div className="mt-20 text-center text-white">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <p key={i}>This is some extra content to make the page scrollable.</p>
-          ))}
+    <main className="flex min-h-screen flex-col items-center justify-center bg-linear-to-b from-[#032d64] to-[#15162c] text-white">
+      <div className="container flex items-center justify-center px-4 py-16">
+        <div className="relative flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center sm:flex-row">
+          <Image
+            src="/intodeep-vector.svg"
+            alt="Logo"
+            width={600}
+            height={500}
+            className="z-0 mr-[30%] -mb-[30%] h-auto w-[min(65vw,600px)] sm:-mr-[10%] sm:mb-[15%]"
+          />
+          <div className="z-12 mt-[0%] -mr-[20%] flex flex-col text-right leading-none text-yellow-400 text-shadow-black text-shadow-lg sm:mt-[5%] sm:mr-[0%] sm:text-left">
+            <h2 className="mx-1.5 text-[clamp(1rem,4.2vw,2rem)] font-light tracking-tight">
+              WE ARE THE
+            </h2>
+            <h1 className="text-[clamp(3.5rem,9vw,8rem)] leading-[0.9] font-bold">
+              Byte
+              <br />
+              Knights
+            </h1>
+            <h2 className="mx-1.5 text-[clamp(1.25rem,4.2vw,3.6rem)] font-light tracking-tight">
+              FTC TEAM 27705
+            </h2>
+          </div>
         </div>
       </div>
     </main>
