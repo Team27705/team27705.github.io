@@ -48,15 +48,15 @@ export default function Header() {
   return (
     <header
       ref={ref}
-      className="fixed z-50 flex max-h-[15%] w-full items-center justify-center bg-transparent p-4 text-white"
+      className="fixed z-50 flex max-h-[10%] w-full items-center justify-center bg-transparent p-4 text-white"
       aria-hidden={false}
     >
       <Image
         src={getLogoSrc("into-the-deep", "lockup")}
         alt="Logo"
         width={200}
-        height={30}
-        className="h-30 w-auto"
+        height={20}
+        className="h-20 w-auto"
         loading="eager"
       />
       <div className="flex flex-col gap-0 text-yellow-400">
