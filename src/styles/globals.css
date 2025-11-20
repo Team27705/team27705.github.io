@@ -162,3 +162,24 @@ input,
 textarea {
   font-family: var(--font-rubik), sans-serif;
 }
+
+/* Override only the first NavigationMenu link (logo) without editing React source
+   Targets the first child of the navigation list and applies higher-specificity
+   CSS to override Tailwind utility classes coming from the component. */
+header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"] > *:first-child [data-slot="navigation-menu-link"] {
+  background-color: transparent !important;
+  background-image: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* Ensure hover/focus don't reapply the component's utility hover backgrounds */
+header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"] > *:first-child [data-slot="navigation-menu-link"]:hover,
+header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"] > *:first-child [data-slot="navigation-menu-link"]:focus {
+  background: transparent !important;
+  box-shadow: none !important;
+}

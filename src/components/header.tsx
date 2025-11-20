@@ -1,10 +1,41 @@
 "use client";
 
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { getLogoSrc } from "./get-logo";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "./ui/navigation-menu";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { HamburgerIcon } from "lucide-react";
+
+const components: { title: string; href: string; description: string }[] = [
+  {
+    title: "Our Team",
+    href: "/team",
+    description: "Learn more about our team!",
+  },
+  {
+    title: "Sponsors",
+    href: "/sponsors",
+    description: "Discover our sponsors",
+  },
+  {
+    title: "Donate",
+    href: "/donate",
+    description: "Give us a hand to keep us going!",
+  },
+  {
+    title: "FAQ",
+    href: "/faq",
+    description: "Frequently Asked Questions",
+  },
+];
 
 export default function Header() {
   const ref = useRef<HTMLElement | null>(null);
@@ -46,21 +77,57 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      ref={ref}
-      className="fixed z-50 flex max-h-[10%] w-full items-center justify-center bg-transparent p-4 text-white"
-      aria-hidden={false}
-    >
-      <Image
-        src={getLogoSrc("into-the-deep", "lockup")}
-        alt="Logo"
-        width={200}
-        height={20}
-        className="h-20 w-auto"
-        loading="eager"
-      />
-      <div className="flex flex-col gap-0 text-yellow-400">
-      </div>
-    </header>
+    <DesktopHeader ref={ref} />
   );
 }
+
+const DesktopHeader = React.forwardRef<HTMLElement, {}>(function DesktopHeader(_, ref) {
+  return (
+    <header
+      ref={ref}
+      className="fixed z-50 flex max-h-32 w-full items-center justify-center bg-transparent p-4"
+      aria-hidden={false}
+    >
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem className="mr-3">
+            <NavigationMenuLink className="bg-none! hover:bg-none! focus:bg-none! data-[active=true]:hover:bg-none! data-[active=focus]:hover:bg-none!">
+              <Image
+                src={getLogoSrc("into-the-deep", "lockup")}
+                alt="Logo"
+                width={200}
+                height={24}
+                className="h-24 w-auto"
+                loading="eager"
+              />
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          {components.map((component) => (
+            <NavigationMenuItem key={component.title}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <NavigationMenuLink
+                    href={component.href}
+                    className="block rounded-md p-3 mt-10 leading-none no-underline transition-colors outline-none select-none hover:bg-gray-100 focus:bg-gray-100 text-yellow-400"
+                  >
+                    <div className="text-lg leading-none font-medium">
+                      {component.title}
+                    </div>
+                  </NavigationMenuLink>
+                </TooltipTrigger>
+                <TooltipContent
+                  className="max-w-xs text-center text-sm"
+                  side="bottom"
+                  sideOffset={4}
+                >
+                  {component.description}
+                </TooltipContent>
+              </Tooltip>
+            </NavigationMenuItem>
+          ))}
+        </NavigationMenuList>
+      </NavigationMenu>
+      <div className="flex flex-col gap-0 text-yellow-400"></div>
+    </header>
+  );
+});
