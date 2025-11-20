@@ -14,6 +14,13 @@ import {
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { HamburgerIcon } from "lucide-react";
 
+/* Enable header scroll behavior:
+  Add id="hero" or data-header-trigger to your hero element.
+  For custom scrollers, pass `scroller` to `ScrollTrigger.create(...)`
+  or use `ScrollTrigger.scrollerProxy(...)`. This isn't necessary for
+  GSAP's scrolling wrapper as it does this automatically.
+*/
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Our Team",
