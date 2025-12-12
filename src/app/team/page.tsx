@@ -44,7 +44,7 @@ export default function TeamPage() {
                         height={96}
                         className="rounded-full"
                       />
-                      <AvatarFallback>
+                      <AvatarFallback className="text-black">
                         {getTeamMemberInitials(member.name)}
                       </AvatarFallback>
                     </Avatar>
