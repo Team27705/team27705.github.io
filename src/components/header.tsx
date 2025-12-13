@@ -189,8 +189,8 @@ const MobileHeader = React.forwardRef<HTMLElement, { className?: string }>(
             src={getLogoSrc("into-the-deep", "lockup")}
             alt="Logo"
             width={120}
-            height={15}
-            className="h-12 w-auto"
+            height={20}
+            className="h-20 w-auto"
             loading="eager"
           />
         </a>
@@ -199,7 +199,7 @@ const MobileHeader = React.forwardRef<HTMLElement, { className?: string }>(
           <SheetTrigger asChild>
             <Button
               aria-label="Open navigation"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-yellow-400/60 bg-black/30 text-yellow-400 shadow-sm backdrop-blur transition hover:bg-black/50 focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black focus:outline-none"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-yellow-400/60 bg-black/30 text-yellow-400 shadow-sm backdrop-blur transition hover:bg-black/50 focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black focus:outline-none mr-5"
             >
               <Menu className="h-6 w-6" />
             </Button>
