@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
-import { get } from "http";
 import { getLogoSrc } from "~/components/get-logo";
 
 export default function HomePage() {
