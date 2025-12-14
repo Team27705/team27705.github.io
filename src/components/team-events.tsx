@@ -64,8 +64,7 @@ export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
     name: "FTC Qualifier 4",
     date: "2025-12-20",
     locationName: "University Heights High School",
-    locationAddress:
-      "701 Saint Anns Ave, Bronx, NY 10455, United States",
+    locationAddress: "701 Saint Anns Ave, Bronx, NY 10455, United States",
     description:
       "The fourth qualifier event for the FTC season, where teams compete to advance to the regional championships.\n\nThis is our first qualifier of the season.",
     type: "COMP",
@@ -107,7 +106,10 @@ export function TeamEventsComponent() {
                     href={mapsUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className={`${text} w-fit underline transition-opacity hover:opacity-80`}
+                    className={cn(
+                      text,
+                      "w-fit underline transition-opacity hover:opacity-80",
+                    )}
                   >
                     {event.locationName}
                   </a>
