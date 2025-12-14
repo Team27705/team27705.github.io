@@ -56,15 +56,16 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export default function Header() {
-  const ref = useRef<HTMLElement | null>(null);
+  const desktopRef = useRef<HTMLElement | null>(null);
+  const mobileRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const el = ref.current;
-    if (!el) return;
+    const desktopEl = desktopRef.current;
+    const mobileEl = mobileRef.current;
 
     // Find a trigger element. By default we look for `#hero`, but pages can
     // opt-in by adding `data-header-trigger` to their hero-like element.
@@ -75,12 +76,14 @@ export default function Header() {
     // If there's no trigger on this page, keep the header visible and
     // do not register ScrollTrigger. This makes the header behavior opt-in.
     if (!triggerElement) {
-      gsap.set(el, { yPercent: 0 });
+      if (desktopEl) gsap.set(desktopEl, { yPercent: 0 });
+      if (mobileEl) gsap.set(mobileEl, { yPercent: 0 });
       return;
     }
 
     // Start hidden (moved up by 100% of its own height)
-    gsap.set(el, { yPercent: -100 });
+    if (desktopEl) gsap.set(desktopEl, { yPercent: -100 });
+    if (mobileEl) gsap.set(mobileEl, { yPercent: -100 });
 
     // Create a ScrollTrigger that toggles header visibility when the hero
     // section scrolls past the top of the viewport.
@@ -90,11 +93,29 @@ export default function Header() {
       end: "bottom top",
       // When we enter (scrolling down past the hero), show the header
       onEnter: () => {
-        gsap.to(el, { yPercent: 0, duration: 0.5, ease: "power2.out" });
+        if (desktopEl)
+          gsap.to(desktopEl, {
+            yPercent: 0,
+            duration: 0.5,
+            ease: "power2.out",
+          });
+        if (mobileEl)
+          gsap.to(mobileEl, { yPercent: 0, duration: 0.5, ease: "power2.out" });
       },
       // When we scroll back up into the hero, hide the header
       onLeaveBack: () => {
-        gsap.to(el, { yPercent: -100, duration: 0.5, ease: "power2.in" });
+        if (desktopEl)
+          gsap.to(desktopEl, {
+            yPercent: -100,
+            duration: 0.5,
+            ease: "power2.in",
+          });
+        if (mobileEl)
+          gsap.to(mobileEl, {
+            yPercent: -100,
+            duration: 0.5,
+            ease: "power2.in",
+          });
       },
     });
 
@@ -107,19 +128,23 @@ export default function Header() {
     };
   }, []);
 
-  return <HeaderWrapper ref={ref} />;
+  return <HeaderWrapper desktopRef={desktopRef} mobileRef={mobileRef} />;
 }
 
-const HeaderWrapper = React.forwardRef<HTMLElement, { className?: string }>(
-  function HeaderWrapper({ className }, ref) {
-    return (
-      <>
-        <DesktopHeader ref={ref} className="hidden sm:flex" />
-        <MobileHeader ref={ref} className="flex sm:hidden" />
-      </>
-    );
-  },
-);
+function HeaderWrapper({
+  desktopRef,
+  mobileRef,
+}: {
+  desktopRef: React.RefObject<HTMLElement>;
+  mobileRef: React.RefObject<HTMLElement>;
+}) {
+  return (
+    <>
+      <DesktopHeader ref={desktopRef} className="hidden sm:flex" />
+      <MobileHeader ref={mobileRef} className="flex sm:hidden" />
+    </>
+  );
+}
 
 const DesktopHeader = React.forwardRef<HTMLElement, { className?: string }>(
   function DesktopHeader({ className }, ref) {
