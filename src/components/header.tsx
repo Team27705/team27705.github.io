@@ -62,6 +62,10 @@ export default function Header() {
 
   useEffect(() => {
     setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isHydrated) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -127,7 +131,7 @@ export default function Header() {
         // ignore
       }
     };
-  }, []);
+  }, [isHydrated]);
 
   if (!isHydrated) {
     return null;
