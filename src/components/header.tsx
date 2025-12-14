@@ -200,7 +200,7 @@ const MobileHeader = React.forwardRef<HTMLElement, { className?: string }>(
           <SheetTrigger asChild>
             <Button
               aria-label="Open navigation"
-              className="mr-5 inline-flex h-10 w-10 items-center justify-center rounded-md border border-yellow-400/60 bg-black/30 text-yellow-400 shadow-sm backdrop-blur transition hover:bg-black/50 focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black focus:outline-none"
+              className="mr-1 inline-flex h-10 w-10 items-center justify-center rounded-md border border-yellow-400/60 bg-black/30 text-yellow-400 shadow-sm backdrop-blur transition hover:bg-black/50 focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black focus:outline-none"
             >
               <Menu className="h-6 w-6" />
             </Button>
