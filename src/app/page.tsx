@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { getLogoSrc } from "~/components/get-logo";
+import { env } from "~/env";
 
 export default function HomePage() {
   return (
@@ -10,7 +11,22 @@ export default function HomePage() {
         className="relative container flex h-screen max-h-screen items-center justify-center px-4"
         id="hero"
       >
-        <div className="flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center ">
+        <div className="absolute inset-0 overflow-hidden" id="background-video">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-screen object-cover"
+            src={env.NEXT_PUBLIC_BG_VIDEO_URL}
+            style={{
+              mask: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)",
+              WebkitMask:
+                "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+        </div>
+        <div className="relative z-10 flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center">
           <Image
             loading="eager"
             src={getLogoSrc("into-the-deep", "tagline")}
@@ -21,7 +37,7 @@ export default function HomePage() {
           />
         </div>
         <ArrowDown
-          className="absolute bottom-8 left-1/2 z-50 -translate-x-1/2 animate-bounce text-yellow-400"
+          className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce text-yellow-400"
           size={48}
         />
       </div>
