@@ -49,7 +49,7 @@ export function resolveLogoPath(season: Season, variant: LogoVariant): string {
   const overridesForSeason = ASSET_OVERRIDES[season];
   const overrideFilename = overridesForSeason?.[variant];
   const filename = overrideFilename ?? `${variant}.svg`;
-  return `/icons/${season}/${filename}`;
+  return `/meta/${season}/${filename}`;
 }
 
 export default function GetLogo({
