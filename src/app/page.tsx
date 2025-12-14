@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { getLogoSrc } from "~/components/get-logo";
 import { env } from "~/env";
+import { TeamEventsComponent } from "~/components/team-events";
 
 const videoOpacityLevel = 0.3;
 
@@ -43,11 +44,11 @@ export default function HomePage() {
           size={48}
         />
       </div>
-      <section className="pt-30">
+      <section className="mt-35">
         <h1 className="my-20 text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-          BUILT TO PERFORM. <br />
-          more placeholder stuff
+          OUR NEXT BYTES
         </h1>
+        <TeamEventsComponent />
       </section>
       {/* Header is rendered in the layout to keep it fixed to the viewport */}
       {
