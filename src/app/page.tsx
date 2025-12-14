@@ -28,7 +28,7 @@ export default function HomePage() {
             }}
           />
         </div>
-        <div className="relative z-10 flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center px-4">
+        <div className="relative z-10 flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center px-4 mb-10">
           <Image
             loading="eager"
             src={getLogoSrc("into-the-deep", "tagline")}
