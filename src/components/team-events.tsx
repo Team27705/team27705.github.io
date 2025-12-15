@@ -81,9 +81,9 @@ export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
   },
 ];
 
-export function TeamEventsComponent() {
+export function TeamEventsComponent({ className }: { className?: string }) {
   return (
-    <div className="sm:max-w-[50vw]">
+    <div className={cn("sm:max-w-[50vw]", className)}>
       {TeamEvents.map((event, index) => {
         const { background, text, border } = EventTypeColorsMap[event.type];
         const mapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(event.locationAddress)}`;

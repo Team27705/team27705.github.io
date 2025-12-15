@@ -47,7 +47,7 @@ export default function HomePage() {
         <h1 className="my-10 text-center text-4xl font-bold text-wrap text-white md:text-5xl lg:text-6xl">
           OUR NEXT BYTES
         </h1>
-        <TeamEventsComponent />
+        <TeamEventsComponent className="mx-auto"/>
       </section>
       <section className="mt-5 max-w-[80vw]">
         <h1 className="my-10 text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl">
