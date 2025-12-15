@@ -9,7 +9,7 @@ const videoOpacityLevel = 0.3;
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-linear-to-b from-[#032d64] to-[#15162c] text-white mb-30">
+    <main className="mb-30 flex min-h-screen flex-col items-center justify-center bg-linear-to-b from-[#032d64] to-[#15162c] text-white">
       <div
         className="relative flex h-screen max-h-screen w-full items-center justify-center"
         id="hero"
@@ -24,12 +24,11 @@ export default function HomePage() {
             src={env.NEXT_PUBLIC_BG_VIDEO_URL}
             style={{
               mask: `linear-gradient(to bottom, rgba(0,0,0,${videoOpacityLevel}) 0%, rgba(0,0,0,${videoOpacityLevel}) 50%, rgba(0,0,0,0) 100%)`,
-              WebkitMask:
-                `linear-gradient(to bottom, rgba(0,0,0,${videoOpacityLevel}) 0%, rgba(0,0,0,${videoOpacityLevel}) 50%, rgba(0,0,0,0) 100%)`,
+              WebkitMask: `linear-gradient(to bottom, rgba(0,0,0,${videoOpacityLevel}) 0%, rgba(0,0,0,${videoOpacityLevel}) 50%, rgba(0,0,0,0) 100%)`,
             }}
           />
         </div>
-        <div className="relative z-10 flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center px-4 mb-10">
+        <div className="relative z-10 mb-10 flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center px-4">
           <Image
             loading="eager"
             src={getLogoSrc("into-the-deep", "tagline")}
@@ -45,7 +44,7 @@ export default function HomePage() {
         />
       </div>
       <section className="mt-35 max-w-[90vw]">
-        <h1 className="my-10 text-center text-wrap text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+        <h1 className="my-10 text-center text-4xl font-bold text-wrap text-white md:text-5xl lg:text-6xl">
           OUR NEXT BYTES
         </h1>
         <TeamEventsComponent />
@@ -55,8 +54,40 @@ export default function HomePage() {
           OUR STORY
         </h1>
         <p className="mx-4 max-w-3xl text-center text-lg leading-relaxed text-white sm:mx-0 sm:text-xl">
-          In 2024, the FTC Brooklyn ByteKnights was formed. As a rookie, we used a kit bot and with the limited resources and knowledge we had, we did the best we could. But for our second year, we’re ready to kick it off with a robot of our own! Get ready for this year’s season of FTC as the ByteKnights are ready to crush it!
+          In 2024, the FTC Brooklyn ByteKnights was formed. As a rookie, we used
+          a kit bot and with the limited resources and knowledge we had, we did
+          the best we could. But for our second year, we’re ready to kick it off
+          with a robot of our own! Get ready for this year’s season of FTC as
+          the ByteKnights are ready to crush it!
         </p>
+      </section>
+      <section className="mt-15 max-w-[80vw]">
+        <h1 className="my-10 text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+          KEEP UP WITH US
+        </h1>
+        <div className="flex flex-row items-center justify-center gap-4 sm:gap-12 sm:flex-row">
+          <a href="https://instagram.com/team27705">
+            <Image
+              src="/icons/instagram.svg"
+              width={84}
+              height={84}
+              alt="Instagram"
+              className="inline-block"
+            />
+          </a>
+          <div className="flex flex-col items-center justify-center text-center text-2xl">
+            <span>Team27705</span>
+          </div>
+          <a href="https://github.com/Team27705">
+            <Image
+              src="/icons/github.svg"
+              width={84}
+              height={84}
+              alt="GitHub"
+              className="inline-block"
+            />
+          </a>
+        </div>
       </section>
     </main>
   );
