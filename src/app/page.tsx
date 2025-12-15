@@ -44,14 +44,14 @@ export default function HomePage() {
           size={48}
         />
       </div>
-      <section className="mt-35">
-        <h1 className="my-20 text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+      <section className="mt-35 max-w-[90vw]">
+        <h1 className="my-10 text-center text-wrap text-4xl font-bold text-white md:text-5xl lg:text-6xl">
           OUR NEXT BYTES
         </h1>
         <TeamEventsComponent />
       </section>
-      <section className="mt-15">
-        <h1 className="my-20 text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+      <section className="mt-15 max-w-[90vw]">
+        <h1 className="my-10 text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl">
           OUR STORY
         </h1>
         <p className="mx-4 max-w-3xl text-center text-lg leading-relaxed text-white sm:mx-0 sm:text-xl">
