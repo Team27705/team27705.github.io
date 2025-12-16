@@ -9,32 +9,22 @@ import Image from "next/image";
 
 const sponsors = [
   {
-    name: "Ike Heller Robotics Center",
-    logo: "/sponsors/ike-heller.png",
-  },
-  {
-    name: "The DEKA Foundation",
-  },
-  {
-    name: "Jabil Cares Foundation",
-    logo: "/sponsors/jabil-cares.png",
-    website: "https://jabil.com/about-us/in-the-community/jabil-cares-foundation.html",
-  },
-  {
-    name: "BOSCH",
-    logo: "/sponsors/bosch.svg",
-    website: "https://www.bosch.com",
-  },
-  {
     name: "MakeLab",
     logo: "/sponsors/makelab.svg",
     website: "https://makelab.com",
   },
   {
-    name: "Brooklyn Tech Alumni Foundation (special thanks to Dr. Landry)",
+    name: "Ike Heller Robotics Center",
+    logo: "/sponsors/ike-heller.png",
+  },
+  {
+    name: "Brooklyn Tech Alumni Foundation",
     logo: "/sponsors/bths-alumni.svg",
     website: "https://bthsalumni.org",
   },
+  {
+    name: "Jeffery M. Haitkin '64 Faculty Grant"
+  }
 ];
 
 export default function SponsorsPage() {
