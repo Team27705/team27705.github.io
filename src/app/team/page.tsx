@@ -37,10 +37,10 @@ export default function TeamPage() {
             {getMembersByDeptartment(department).map((member) => (
               <Card
                 key={member.name}
-                className="h-36 sm:h-54 min-w-56 w-[80vw] sm:w-56 bg-gray-800 text-white shadow-lg"
+                className="h-36 w-[80vw] min-w-54 bg-gray-800 text-white shadow-lg sm:h-58 sm:w-54"
               >
-                <CardHeader className="flex flex-row items-center sm:flex-col gap-6 sm:gap-0">
-                  <Avatar className="mb-4 size-24">
+                <CardHeader className="flex flex-row items-center gap-6 sm:flex-col sm:gap-0">
+                  <Avatar className="mb-4 size-24 sm:size-28">
                     <AvatarImage
                       src={member.image}
                       alt={member.name}
@@ -50,14 +50,14 @@ export default function TeamPage() {
                       {getTeamMemberInitials(member.name)}
                     </AvatarFallback>
                   </Avatar>
-                    <div className="flex flex-col sm:items-center justify-center">
+                  <div className="flex flex-col pb-4 sm:pb-0 sm:items-center">
                     <CardTitle className="text-xl font-bold">
                       {member.name}
                     </CardTitle>
                     <CardDescription className="text-yellow-400">
                       {member.role}
                     </CardDescription>
-                    </div>
+                  </div>
                 </CardHeader>
               </Card>
             ))}
