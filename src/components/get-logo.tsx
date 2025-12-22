@@ -13,9 +13,20 @@ export const LOGO_VARIANTS = {
   ORCA: "orca",
   LOCKUP: "lockup",
   TAGLINE: "tagline",
+  GAMEWORDMARK: "gamewordmark",
 } as const;
 
 export type LogoVariant = (typeof LOGO_VARIANTS)[keyof typeof LOGO_VARIANTS];
+
+// Whether a logo belongs to the team or to FIRST.
+export type LogoOwnership = "team" | "first";
+
+export const LOGO_OWNERSHIPS: Record<LogoVariant, LogoOwnership> = {
+  orca: "team",
+  lockup: "team",
+  tagline: "team",
+  gamewordmark: "first",
+};
 
 // Optional per-season filename overrides. Useful when file names don't match the variant name.
 const ASSET_OVERRIDES: Partial<
@@ -26,6 +37,9 @@ const ASSET_OVERRIDES: Partial<
   // [SEASONS.INTO_THE_DEEP]: {
   //   [LOGO_VARIANTS.WORDMARK]: "intodeep-vector.svg",
   // },
+  [SEASONS.DECODE]: {
+    [LOGO_VARIANTS.GAMEWORDMARK]: "game-wordmark.png",
+  },
 };
 
 const DEFAULT_SEASON: Season = SEASONS.INTO_THE_DEEP;
@@ -48,11 +62,13 @@ export interface GetLogoProps {
 export function resolveLogoPath(season: Season, variant: LogoVariant): string {
   const overridesForSeason = ASSET_OVERRIDES[season];
   const overrideFilename = overridesForSeason?.[variant];
+  // attempt svg by default (or use override)
   const filename = overrideFilename ?? `${variant}.svg`;
+
   return `/meta/${season}/${filename}`;
 }
 
-export default function GetLogo({
+export function Logo({
   season = DEFAULT_SEASON,
   variant = DEFAULT_VARIANT,
   width = 100,
@@ -74,14 +90,21 @@ export default function GetLogo({
     : DEFAULT_VARIANT;
 
   const src = resolveLogoPath(chosenSeason, chosenVariant);
+  const altText = alt
+    ? alt
+    : `Team 27705's ${chosenVariant} logo for the ${chosenSeason} season`;
+  // if image is FIRST property, use different alt text
+  const isFirstLogo =
+    LOGO_OWNERSHIPS[chosenVariant] === "first";
+  const finalAlt =
+    isFirstLogo
+      ? `FIRST's ${chosenVariant} logo for the ${chosenSeason} season`
+      : altText;
 
   return (
     <Image
       src={src}
-      alt={
-        alt ??
-        `Team 27705's ${chosenVariant} logo for the ${chosenSeason} season`
-      }
+      alt={finalAlt}
       width={width}
       height={height}
       className={className}

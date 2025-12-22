@@ -1,9 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
-import { getLogoSrc } from "~/components/get-logo";
+import { getLogoSrc, Logo } from "~/components/get-logo";
 import { env } from "~/env";
 import { TeamEventsComponent } from "~/components/team-events";
+import {
+  AwardBody,
+  AwardEventLogo,
+  AwardEventName,
+  AwardTitle,
+} from "~/components/award";
 
 const videoOpacityLevel = 0.3;
 
@@ -44,10 +50,19 @@ export default function HomePage() {
         />
       </div>
       <section className="mt-35 max-w-[90vw]">
+        <AwardBody className="mx-auto">
+          <AwardEventLogo>
+            <Logo season="decode" variant="gamewordmark" className="w-full"/>
+          </AwardEventLogo>
+          <AwardEventName>NYC Qualifier 4</AwardEventName>
+          <AwardTitle>Inspire Award 2nd Place</AwardTitle>
+        </AwardBody>
+      </section>
+      <section className="mt-5 max-w-[80vw]">
         <h1 className="my-10 text-center text-4xl font-bold text-wrap text-white md:text-5xl lg:text-6xl">
           OUR NEXT BYTES
         </h1>
-        <TeamEventsComponent className="mx-auto"/>
+        <TeamEventsComponent className="mx-auto" />
       </section>
       <section className="mt-5 max-w-[80vw]">
         <h1 className="my-10 text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl">
