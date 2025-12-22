@@ -20,7 +20,7 @@ const TeamMember = z.object({
 });
 export type TeamMember = z.infer<typeof TeamMember>;
 
-export function getMembersByDeptartment(department: string) {
+export function getMembersByDepartment(department: string) {
   return TeamMembers.filter((member) => member.department === department);
 }
 

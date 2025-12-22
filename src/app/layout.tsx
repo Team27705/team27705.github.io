@@ -44,7 +44,7 @@ export default function RootLayout({
       className={`${geist.variable} ${rubik.variable} ${rubikMonoOne.variable}`}
     >
       <body className="bg-[#15162c]">
-        {/* Header must be outside the SmoothSmoother wrapper so it remains fixed to the viewport */}
+        {/* Header must be outside the SmoothScroller wrapper so it remains fixed to the viewport */}
         <Header />
         <SmoothScroller>
           {children}

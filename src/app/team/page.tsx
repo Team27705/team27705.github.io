@@ -10,7 +10,7 @@ import Image from "next/image";
 import {
   TeamMembers,
   TeamDepartments,
-  getMembersByDeptartment,
+  getMembersByDepartment,
   getTeamMemberInitials,
 } from "~/components/team-members";
 
@@ -33,8 +33,8 @@ export default function TeamPage() {
           <h2 className="mb-6 text-4xl font-semibold text-yellow-400">
             {department}
           </h2>
-          <div className="flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center gap-6 sm:flex-row">
-            {getMembersByDeptartment(department).map((member) => (
+          <div className="flex w-full max-w-[min(92vw,1200px)] flex-col flex-wrap items-center justify-center gap-6 sm:flex-row">
+            {getMembersByDepartment(department).map((member) => (
               <Card
                 key={member.name}
                 className="h-36 w-[80vw] min-w-54 bg-gray-800 text-white shadow-lg sm:h-58 sm:w-54"
@@ -50,7 +50,7 @@ export default function TeamPage() {
                       {getTeamMemberInitials(member.name)}
                     </AvatarFallback>
                   </Avatar>
-                  <div className="flex flex-col pb-4 sm:pb-0 sm:items-center">
+                  <div className="flex flex-col pb-4 sm:items-center sm:pb-0">
                     <CardTitle className="text-xl font-bold">
                       {member.name}
                     </CardTitle>
