@@ -26,6 +26,7 @@ export default function HomePage() {
             loop
             muted
             playsInline
+            preload="none"
             className="h-full w-full object-cover"
             src={env.NEXT_PUBLIC_BG_VIDEO_URL}
             style={{
@@ -53,7 +54,7 @@ export default function HomePage() {
         <h1 className="my-10 text-center text-4xl font-bold text-wrap text-white md:text-5xl lg:text-6xl">
           WHAT WE'VE DONE
         </h1>
-        <div className="mx-auto w-full justify-center flex flex-row flex-wrap gap-8">
+        <div className="mx-auto flex w-full flex-row flex-wrap justify-center gap-8">
           <Award className="w-42">
             <AwardEventLogo>
               <Logo season="decode" variant="gamewordmark" className="w-full" />
