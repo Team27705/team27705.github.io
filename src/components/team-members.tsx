@@ -2,9 +2,8 @@ import * as z from "zod";
 
 const TeamDepartment = z.enum([
   "Mentors",
+  "Captains",
   "Operations",
-  "Outreach",
-  "Media",
   "Mechanical",
   "Electrical",
   "Programming",
@@ -49,41 +48,31 @@ export const TeamMembers: TeamMember[] = [
   {
     image: "/team/lubaba.jpg",
     name: "Lubaba N.",
-    department: "Operations",
+    department: "Captains",
     role: "Co-Captain",
   },
   {
     image: "/team/christopher.jpg",
     name: "Christopher M.",
-    department: "Operations",
+    department: "Captains",
     role: "Co-Captain",
   },
   {
     image: "/team/ryan.jpg",
     name: "Ryan L.",
-    department: "Outreach",
-    role: "Outreach Lead",
-  },
-  {
-    image: "/team/jayanti.jpg",
-    name: "Jayanti R.",
-    department: "Outreach",
-  },
-  {
-    image: "/team/jason.jpg",
-    name: "Jason Q.",
-    department: "Outreach",
+    department: "Operations",
+    role: "Operations Lead",
   },
   {
     image: "/team/syeda.jpg",
     name: "Syeda H.",
-    department: "Media",
+    department: "Operations",
     role: "Media Lead",
   },
   {
-    image: "/team/selena.jpg",
-    name: "Selena J.",
-    department: "Media",
+    image: "/team/jayanti.jpg",
+    name: "Jayanti R.",
+    department: "Operations",
   },
   {
     image: "/team/ethan.jpg",
@@ -102,8 +91,8 @@ export const TeamMembers: TeamMember[] = [
     department: "Mechanical",
   },
   {
-    image: "/team/madeha.jpg",
-    name: "Madeha B.",
+    image: "/team/selena.jpg",
+    name: "Selena J.",
     department: "Mechanical",
   },
   {
@@ -122,6 +111,11 @@ export const TeamMembers: TeamMember[] = [
     name: "Rain C.",
     department: "Programming",
     role: "Programming Lead",
+  },
+  {
+    image: "/team/madeha.jpg",
+    name: "Madeha B.",
+    department: "Programming",
   },
   {
     image: "/team/issac.jpg",
