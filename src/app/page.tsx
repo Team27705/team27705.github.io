@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { getLogoSrc, Logo } from "~/components/get-logo";

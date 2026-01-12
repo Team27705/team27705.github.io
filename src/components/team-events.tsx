@@ -1,16 +1,14 @@
+import { Gamepad2, Sword, Swords, Trophy } from "lucide-react";
 import React, { cloneElement } from "react";
+import * as z from "zod";
+import { cn } from "~/lib/utils";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Gamepad2, Sword, Swords, Trophy } from "lucide-react";
-import * as z from "zod";
-import { cn } from "~/lib/utils";
 
 // CHANGE EVENTS HERE
 export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [

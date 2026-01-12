@@ -7,7 +7,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // Initialize ScrollSmoother once on the client. Wraps the site's main content
 // to provide smooth scrolling and allows ScrollTrigger to work with the smoother.
-export default function SmoothScroller({ children }: { children: React.ReactNode }) {
+export default function SmoothScroller({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
 

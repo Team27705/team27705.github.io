@@ -8,8 +8,6 @@ import { Geist, Rubik, Rubik_Mono_One } from "next/font/google";
 import SmoothScroller from "~/components/smooth-scroller";
 import Header from "~/components/header";
 import Footer from "~/components/footer";
-import { Button } from "~/components/ui/button";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "The ByteKnights - FTC 27705",

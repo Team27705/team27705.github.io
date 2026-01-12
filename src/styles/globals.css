@@ -4,7 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -165,7 +166,11 @@ textarea {
 
 /* Override styles of only the first NavigationMenuLink (logo) component in the
    header without editing the <NavigationMenuLink> component code. */
-header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"]>*:first-child [data-slot="navigation-menu-link"] {
+header
+  [data-slot="navigation-menu"]
+  [data-slot="navigation-menu-list"]
+  > *:first-child
+  [data-slot="navigation-menu-link"] {
   background-color: transparent !important;
   background-image: none !important;
   padding: 0 !important;
@@ -177,8 +182,16 @@ header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"]>*:first-
 }
 
 /* Ensure hover/focus don't reapply the component's utility hover backgrounds */
-header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"]>*:first-child [data-slot="navigation-menu-link"]:hover,
-header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"]>*:first-child [data-slot="navigation-menu-link"]:focus {
+header
+  [data-slot="navigation-menu"]
+  [data-slot="navigation-menu-list"]
+  > *:first-child
+  [data-slot="navigation-menu-link"]:hover,
+header
+  [data-slot="navigation-menu"]
+  [data-slot="navigation-menu-list"]
+  > *:first-child
+  [data-slot="navigation-menu-link"]:focus {
   background: transparent !important;
   box-shadow: none !important;
 }

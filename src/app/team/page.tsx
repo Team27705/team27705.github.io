@@ -3,12 +3,9 @@ import {
   CardTitle,
   CardHeader,
   CardDescription,
-  CardContent,
 } from "~/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "~/components/ui/avatar";
-import Image from "next/image";
 import {
-  TeamMembers,
   TeamDepartments,
   getMembersByDepartment,
   getTeamMemberInitials,
