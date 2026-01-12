@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#15162c',
-}
+  themeColor: "#15162c",
+};
 
 const geist = Geist({
   subsets: ["latin"],

@@ -94,12 +94,10 @@ export function Logo({
     ? alt
     : `Team 27705's ${chosenVariant} logo for the ${chosenSeason} season`;
   // if image is FIRST property, use different alt text
-  const isFirstLogo =
-    LOGO_OWNERSHIPS[chosenVariant] === "first";
-  const finalAlt =
-    isFirstLogo
-      ? `FIRST's ${chosenVariant} logo for the ${chosenSeason} season`
-      : altText;
+  const isFirstLogo = LOGO_OWNERSHIPS[chosenVariant] === "first";
+  const finalAlt = isFirstLogo
+    ? `FIRST's ${chosenVariant} logo for the ${chosenSeason} season`
+    : altText;
 
   return (
     <Image

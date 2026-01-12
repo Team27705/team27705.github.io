@@ -23,7 +23,7 @@ const sponsors = [
     website: "https://bthsalumni.org",
   },
   {
-    name: "Jeffery M. Haitkin '64 Faculty Grant"
+    name: "Jeffery M. Haitkin '64 Faculty Grant",
   },
   {
     name: "Koffee Cafe",
@@ -32,7 +32,7 @@ const sponsors = [
   },
   {
     name: "BTHS COMMA",
-  }
+  },
 ];
 
 export default function SponsorsPage() {
@@ -53,7 +53,7 @@ export default function SponsorsPage() {
           {sponsors.map((sponsor) => (
             <Card
               key={sponsor.name}
-              className="flex h-60 w-full sm:w-[16rem] min-w-[16rem] items-center justify-center bg-gray-800 text-white shadow-lg text-center"
+              className="flex h-60 w-full min-w-[16rem] items-center justify-center bg-gray-800 text-center text-white shadow-lg sm:w-[16rem]"
             >
               <CardContent>
                 {sponsor.website ? (
@@ -68,10 +68,12 @@ export default function SponsorsPage() {
                         alt={sponsor.name}
                         width={200}
                         height={100}
-                        className="object-contain w-full h-auto"
+                        className="h-auto w-full object-contain"
                       />
                     ) : (
-                      <span className="text-4xl sm:text-2xl">{sponsor.name}</span>
+                      <span className="text-4xl sm:text-2xl">
+                        {sponsor.name}
+                      </span>
                     )}
                   </a>
                 ) : sponsor.logo ? (
@@ -80,7 +82,7 @@ export default function SponsorsPage() {
                     alt={sponsor.name}
                     width={200}
                     height={100}
-                    className="object-contain w-full h-auto"
+                    className="h-auto w-full object-contain"
                   />
                 ) : (
                   <span className="text-4xl sm:text-2xl">{sponsor.name}</span>

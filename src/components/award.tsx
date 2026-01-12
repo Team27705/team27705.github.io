@@ -47,7 +47,7 @@ export function AwardEventName({
   return (
     <h3
       className={cn(
-        "max-w-[85%] text-center text-lg leading-tight font-regular text-white",
+        "font-regular max-w-[85%] text-center text-lg leading-tight text-white",
         className,
       )}
     >
