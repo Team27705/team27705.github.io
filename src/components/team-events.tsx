@@ -13,16 +13,6 @@ import {
 // CHANGE EVENTS HERE
 export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
   {
-    name: "FTC NYC Qualifier 8",
-    date: "2026-01-17",
-    locationName: "Francis Lewis High School",
-    locationAddress:
-      "58-20 Utopia Pkwy, Fresh Meadows, NY 11365, United States",
-    description:
-      "The eighth qualifier event of the FTC season, where teams compete to advance to the regional championships.\n\nThis is our second qualifier of the season.",
-    type: "QUALI",
-  },
-  {
     name: "FTC NYC Super Qualifier 1",
     date: "2026-02-28",
     locationName: "John Dewey High School",
